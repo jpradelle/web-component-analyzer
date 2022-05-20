@@ -78,7 +78,7 @@ function definitionToHTMLElement(definition: ComponentDefinition, checker: TypeC
 
 	// Build source section
 	const node = getFirst(definition.identifierNodes);
-	const path = getRelativePath(node?.getSourceFile().fileName, config);
+	const path = getRelativePath(node?.getSourceFile().fileName, config).replace("\\\\", "/");
 
 	if (node?.getText() && path) {
 		build.source = {

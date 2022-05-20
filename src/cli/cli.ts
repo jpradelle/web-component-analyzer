@@ -9,6 +9,7 @@ import { log } from "./util/log";
  */
 export function cli(): void {
 	const argv = yargs
+		.pkgConf('web-types-config')
 		.usage("Usage: $0 <command> [glob..] [options]")
 		.command<AnalyzerCliConfig>({
 			command: ["analyze [glob..]", "$0"],
